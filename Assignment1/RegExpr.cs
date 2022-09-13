@@ -33,4 +33,6 @@ public static class RegExpr
             yield return Regex.Replace(match.Groups[1].Value, @$"(<((?!{tag})\w+)[^>]*>)([^<]*)(<\/\2>)", m => m.Groups[3].Value);
         }
     }
+
+    public static IEnumerable<(Uri url, string title)> Urls(string html) => throw new NotImplementedException();
 }

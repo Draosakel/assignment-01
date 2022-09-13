@@ -1,4 +1,3 @@
-using Xunit;
 using System.Collections.Generic;
 
 namespace Assignment1.Tests;
@@ -30,6 +29,19 @@ public class IteratorsTests
 
         // Assert
         Assert.Equal(new List<int>(), flat);
+    }
+
+    [Fact]
+    public void Flatten_different_list_sizes()
+    {
+        // Arrange
+        var input = new List<List<int>> { new List<int> { 1 }, new List<int> { 2, 3 }, new List<int> { 4, 5, 6 } };
+
+        // Act
+        var flat = Assignment1.Iterators.Flatten<int>(input);
+
+        // Assert
+        Assert.Equal(new List<int> { 1, 2, 3, 4, 5, 6 }, flat);
     }
 
     [Fact]
